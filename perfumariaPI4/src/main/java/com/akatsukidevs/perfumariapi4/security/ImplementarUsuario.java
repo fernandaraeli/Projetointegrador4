@@ -26,5 +26,6 @@ public class ImplementarUsuario implements UserDetailsService {
 		
 		return usuario;
 	}
-
+	
+	
 }

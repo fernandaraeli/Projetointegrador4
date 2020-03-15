@@ -6,6 +6,8 @@ import org.springframework.security.core.GrantedAuthority;
 
 public class Autorizacao implements GrantedAuthority, Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public String getAuthority() {
 		

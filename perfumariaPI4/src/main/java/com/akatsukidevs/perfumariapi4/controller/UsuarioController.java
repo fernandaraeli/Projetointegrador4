@@ -1,6 +1,7 @@
 package com.akatsukidevs.perfumariapi4.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,8 @@ public class UsuarioController {
 	//para cadastro do usuario solicitando o post
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.POST)
 	public String formulario(Usuario usuario) {
+		BCryptPasswordEncoder bspe = new BCryptPasswordEncoder();
+		bspe.encode(usuario.getSenha());
 		ur.save(usuario);
 		return("redirect:/cadastrarUsuario");
 	}
@@ -36,6 +39,9 @@ public class UsuarioController {
 		return mv;
 		
 	}
+	
+	
+	
 	
 	
 	
