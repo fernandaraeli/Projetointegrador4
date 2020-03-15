@@ -1,0 +1,42 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Usuário</title>
+
+<style>
+body {
+	text-align: center;
+	align-items: center;
+}
+</style>
+
+</head>
+<body>
+	<h1>Usuário</h1>
+	<hr>
+	<br>
+
+	<form method="POST">
+		<input type="hidden" name="id" value="" /> <label>Id:</label> &nbsp; <input
+			type="text" disabled name="id" value="" /><br>
+		<br> <label>Email:</label> &nbsp; <input type="text" name="email"
+			value="" /><br>
+		<br> <label>Senha:</label> &nbsp; <input type="text" name="Senha"
+			value="" /><br>
+		<br> <label>tipo:</label> &nbsp; <input type="text" name="tipo"
+			value="" /><br>
+		<br>
+
+		<button type="submit" class="btn btn-success">Salvar</button>
+		&nbsp;
+		<button type="reset" value="Limpar" class="btn btn-primary">Limpar</button>
+		<a href="" class="btn btn-primary">Voltar</a>
+	</form>
+</body>
+</html>
