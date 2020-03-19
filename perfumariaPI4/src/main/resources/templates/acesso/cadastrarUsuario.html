@@ -21,7 +21,9 @@ body {
 	<h1>Usuário</h1>
 	<hr>
 	<br>
-
+	
+	<th-block th:include="MensagemValidacao"></th-block>
+	
 	<form method="POST">
 		<input type="hidden" name="id" value="" /> <label>Id:</label> &nbsp; <input
 			type="text" disabled name="id" value="" /><br>

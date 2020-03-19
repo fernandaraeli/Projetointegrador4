@@ -20,14 +20,14 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http/*.csrf().disable()*/.authorizeRequests()
+		http.csrf().disable().authorizeRequests()
 				// todas as paginas que tem"/" vão ser autenticados por todos
 				// As restantes com hasRole eu identifico quem usar
 				.antMatchers(HttpMethod.GET, "/").permitAll()
-				//.antMatchers(HttpMethod.GET, "/cadatrarUsuario").hasRole("admin")
-				//.antMatchers(HttpMethod.POST, "/cadatrarUsuario").hasRole("admin")
+				.antMatchers(HttpMethod.GET, "/cadatrarUsuario").hasRole("admin")
+				.antMatchers(HttpMethod.POST, "/cadatrarUsuario").hasRole("admin")
 				// autenticação de telas por pessoas
-				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll()
+				.anyRequest().authenticated().and().formLogin()./*loginPage("/login").*/permitAll()
 				// se a pessoa quer sair só apertar "/logout"
 				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}

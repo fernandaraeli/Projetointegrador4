@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Entity
@@ -20,20 +21,27 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_usuario;
+	@NotEmpty
 	private String email;
+	@NotEmpty
 	private String senha;
+	@NotEmpty
 	private String tipo;
+	@NotEmpty
+	private boolean status;
+	
 	
 	public Usuario() {
 		
 	}
 
-	public Usuario(Long id_usuario, String email, String senha, String tipo) {
-		super();
+	public Usuario(Long id_usuario, String email, String senha, String tipo, boolean status) {
+		BCryptPasswordEncoder bspe = new BCryptPasswordEncoder();
 		this.id_usuario = id_usuario;
 		this.email = email;
-		this.senha = senha;
+		this.senha =bspe.encode(senha);
 		this.tipo = tipo;
+		this.status = true;
 	}
 
 	public Long getId_usuario() {
@@ -57,7 +65,8 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		BCryptPasswordEncoder bspe = new BCryptPasswordEncoder();
+		this.senha = bspe.encode(senha);
 	}
 
 	public String getTipo() {
@@ -67,6 +76,15 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 
 	@Override
 	public int hashCode() {
