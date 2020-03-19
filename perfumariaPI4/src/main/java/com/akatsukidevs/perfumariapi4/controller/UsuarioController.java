@@ -1,5 +1,7 @@
 package com.akatsukidevs.perfumariapi4.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -27,12 +29,12 @@ public class UsuarioController {
 	
 	//para cadastro do usuario solicitando o post
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.POST)
-	public String salvar(Usuario usuario/*, BindingResult result, RedirectAttributes attribute*/) {
-		//if(result.hasErrors()) {
-			//attribute.addFlashAttribute("mensagem: ", "Verifique os campos em branco"); 
-		//}
+	public String salvar(Usuario usuario, BindingResult result, RedirectAttributes attribute) {
+		if(result.hasErrors()) {
+			attribute.addFlashAttribute("mensagem: ", "Verifique os campos em branco"); 
+		}
 		ur.save(usuario);
-		//attribute.addFlashAttribute("mensagem: ", "Salvo com sucesso");
+		attribute.addFlashAttribute("mensagem: ", "Salvo com sucesso");
 		return("redirect:/cadastrarUsuario");
 	}
 	
@@ -40,18 +42,18 @@ public class UsuarioController {
 	public ModelAndView listaUsuarios() {
 		ModelAndView mv = new ModelAndView("/acesso/usuario");
 		Iterable<Usuario> usuarios = ur.findAll();
-		//for (Usuario u : usuarios) {
-		//	if(u.isStatus()!=false) {
+		for (Usuario u : usuarios) {
+			if(u.isStatus()!=false) {
 				mv.addObject("usuarios", usuarios);
-			//}
-		//}
+			}
+		}
 		return mv;
 		
 	}
 	
 	/*@RequestMapping("/{codigo}")
 	public String deletarUsuarios(@PathVariable ("id") Long id, RedirectAttributes attribute) {
-		Usuario u = ur.procuraId(id);
+		Usuario u = ur.findById("id");
 		u.setStatus(false);
 		ur.save(u);
 		attribute.addFlashAttribute("mensagem: ", "Deletado com sucesso");
