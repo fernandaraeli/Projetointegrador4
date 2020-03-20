@@ -27,7 +27,6 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	private String senha;
 	@NotEmpty
 	private String tipo;
-	@NotEmpty
 	private boolean status;
 	
 	
@@ -35,7 +34,7 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 		
 	}
 
-	public Usuario(Long id_usuario, String email, String senha, String tipo, boolean status) {
+	public Usuario(Long id_usuario, String email, String senha, String tipo) {
 		BCryptPasswordEncoder bspe = new BCryptPasswordEncoder();
 		this.id_usuario = id_usuario;
 		this.email = email;

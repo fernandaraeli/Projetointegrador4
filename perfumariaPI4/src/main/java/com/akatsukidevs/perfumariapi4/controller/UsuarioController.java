@@ -20,11 +20,10 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository ur;
 	
-	
-	
+		
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.GET)
 	public String salvar() {
-		return("acesso/cadastrarUsuario");
+		return("acesso/cadastraUsuario");
 	}
 	
 	//para cadastro do usuario solicitando o post
@@ -40,13 +39,13 @@ public class UsuarioController {
 	
 	@RequestMapping("/usuarios")
 	public ModelAndView listaUsuarios() {
-		ModelAndView mv = new ModelAndView("/acesso/usuario");
+		ModelAndView mv = new ModelAndView("/acesso/listaUsuarios");
 		Iterable<Usuario> usuarios = ur.findAll();
-		for (Usuario u : usuarios) {
-			if(u.isStatus()!=false) {
+		//for (Usuario u : usuarios) {
+			//if(u.isStatus()!=false) {
 				mv.addObject("usuarios", usuarios);
-			}
-		}
+			//}
+		//}
 		return mv;
 		
 	}
@@ -60,6 +59,5 @@ public class UsuarioController {
 		return ("redirect:/usuarios");
 		
 	}*/
-	
 	
 }
