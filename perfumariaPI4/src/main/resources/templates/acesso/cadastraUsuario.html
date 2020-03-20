@@ -1,124 +1,134 @@
 <!doctype html>
 <html lang="pt-br" mlns:th="http://www.thymeleaf.org"
-				   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-  <head>
-    <title>ADM - Cadastro</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>ADM - Cadastro</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    	  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 
-    <style>
-        .footer{
-            position:fixed;
-            bottom:0;
-            width:100%;   
-            height: 55px;      
-        }
+<style>
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 55px;
+}
+</style>
 
-    </style>
+</head>
+<body style="background: #E0FFFF;">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 
-  </head>
-  <body style="background: #E0FFFF ;">    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!--NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<!--<img class="logo" src="logoPerfumariaPi4.png" alt="" hreF="">-->
+			<a class="navbar-brand h1 mb-0" href="#">Logo</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSite">
+				<spam class="navbar-toggler-icon"></spam>
+			</button>
 
-    <!--NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <!--<img class="logo" src="logoPerfumariaPi4.png" alt="" hreF="">-->
-            <a class="navbar-brand h1 mb-0" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-                <spam class="navbar-toggler-icon"></spam>
-            </button>
-    
-            <div class="collapse navbar navbar-collapse" id="navbarSite">
-                <ul class="navbar-nav mr-auto"><!--mr-auto deixa a margem a direita (ml-auto na esquerda)-->
-                    <li class="nav-iem">
-                        <a class="nav-link" href="#">Masculino</a>
-                    </li>
-                    <li class="nav-iem">
-                        <a class="nav-link" href="#">Feminino</a>
-                    </li>
-                    <li class="nav-iem">
-                        <a class="nav-link" href="#">Infantil</a>
-                    </li>
-                </ul>
-                
-                <form class="form-inline" action="">
-                    <input class="form-control ml-2 mr-2 " type="search" name="" placeholder="Buscar...">
-                    <button class="btn btn-light" type="submit">OK</button>
-                </form>
+			<div class="collapse navbar navbar-collapse" id="navbarSite">
+				<ul class="navbar-nav mr-auto">
+					<!--mr-auto deixa a margem a direita (ml-auto na esquerda)-->
+					<li class="nav-iem"><a class="nav-link" href="#">Masculino</a>
+					</li>
+					<li class="nav-iem"><a class="nav-link" href="#">Feminino</a>
+					</li>
+					<li class="nav-iem"><a class="nav-link" href="#">Infantil</a>
+					</li>
+				</ul>
 
-                <ul class="navbar-nav ml-auto"> 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">Log</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Entrar</a>
-                            <a href="#" class="dropdown-item">Cadastrar</a>
-                        </div>
-                    </li>
-                </ul>
-                
-            </div>
-        </div>
-    </nav>
-    <!--NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_-->
-    <!--CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__-->
-        <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <div class="card-header">
-                        <h3 class="text-center font-weight-light my-4">Usuário</h3>
-                    </div>
-                    <div class="card-body">
-                        <form method="post">
-                            <div class="form-group">
-                                <label class="small mb-1" for="inputEmailAdress">E-mail</label>
-                                <input type="email" class="form-control py-4" id="inputEmailAdress" placeholder="Digite seu e-mail">
-                            </div>
-                            <div class="form-group">
-                                <label class="small mb-1" for="inputPassword">Password</label>
-                                <input type="password" class="form-control py-4" id="inputPassword" placeholder="Digite sua senha">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserAdm" aria-placeholder="Selecione um tipo de usuário">Usuário</label>
-                                <select class="form-control" id="tipo" value="tipo">
-                                  <option value="teste"></option>
-                                  <option id="admin" value="admin">Admin</option>
-                                  <option id="estoque" value="estoque">Estoque</option>
-                                  <option id="comprador" value="comprador">Comprador</option>
-                                </select>
-                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                <button type="submit"  class="btn btn-primary " >Salvar</button>
-                                <button type="button"  class="btn btn-primary " href="acesso/listaUsuario">Voltar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> 
-    <!--CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__-->
+				<form class="form-inline" action="">
+					<input class="form-control ml-2 mr-2 " type="search" name=""
+						placeholder="Buscar...">
+					<button class="btn btn-light" type="submit">OK</button>
+				</form>
 
-    <div class="footer">
-        <footer class="py-4 bg-dark mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Projeto integrador 4</div>
-                    <div class="text-muted">Akatsuki Devs</div>
-                </div>
-            </div>
-        </footer>
-    </div>
-      
-  </body>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+						id="navDrop">Log</a>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item">Entrar</a> <a href="#"
+								class="dropdown-item">Cadastrar</a>
+						</div></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	<!--NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_NAVBAR_-->
+	<!--CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__-->
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-5">
+				<div class="card shadow-lg border-0 rounded-lg mt-5">
+					<div class="card-header">
+						<h3 class="text-center font-weight-light my-4">Usuário</h3>
+					</div>
+					<div class="card-body">
+						
+						
+						
+						<form class="form-group" method="POST">
+							
+							<label>Email:</label> &nbsp; <input  class="form-control py-4" type="text" name="email" value="" />
+							<label>Senha:</label> &nbsp; <input  class="form-control py-4" type="text" name="senha" value="" />
+							<label>Tipo de Usuário:</label> &nbsp; 
+								<select  class="form-control" id="tipo" name="tipo">
+                                  	<option value="teste"></option>
+                                  	<option value="admin">Admin</option>
+                                  	<option value="estoque">Estoque</option>
+                                  	<option value="comprador">Comprador</option>
+                                </select><br>
+							<button type="submit" class="btn btn-primary">Salvar</button>
+							&nbsp;
+							<a href="/usuarios" class="btn btn-primary">Voltar</a>
+						</form>
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__CARD_CADASTRO__-->
+
+	<div class="footer">
+		<footer class="py-4 bg-dark mt-auto">
+			<div class="container-fluid">
+				<div class="d-flex align-items-center justify-content-between small">
+					<div class="text-muted">Projeto integrador 4</div>
+					<div class="text-muted">Akatsuki Devs</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+</body>
 </html>

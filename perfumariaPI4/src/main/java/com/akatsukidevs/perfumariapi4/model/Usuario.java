@@ -21,13 +21,10 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_usuario;
-	@NotEmpty
 	private String email;
-	@NotEmpty
 	private String senha;
-	@NotEmpty
 	private String tipo;
-	private boolean status;
+	private Boolean status=true;
 	
 	
 	public Usuario() {
@@ -40,7 +37,7 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 		this.email = email;
 		this.senha =bspe.encode(senha);
 		this.tipo = tipo;
-		this.status = true;
+		this.status=true;
 	}
 
 	public Long getId_usuario() {

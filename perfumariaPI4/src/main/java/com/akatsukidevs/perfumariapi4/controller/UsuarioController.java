@@ -1,11 +1,8 @@
 package com.akatsukidevs.perfumariapi4.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,14 +26,14 @@ public class UsuarioController {
 	//para cadastro do usuario solicitando o post
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.POST)
 	public String salvar(Usuario usuario, BindingResult result, RedirectAttributes attribute) {
-		if(result.hasErrors()) {
-			attribute.addFlashAttribute("mensagem: ", "Verifique os campos em branco"); 
-		}
+		//if(result.hasErrors()) {
+			//attribute.addFlashAttribute("mensagem: ", "Verifique os campos em branco"); 
+		//}
 		ur.save(usuario);
-		attribute.addFlashAttribute("mensagem: ", "Salvo com sucesso");
+		//attribute.addFlashAttribute("mensagem: ", "Salvo com sucesso");
 		return("redirect:/cadastrarUsuario");
 	}
-	
+
 	@RequestMapping("/usuarios")
 	public ModelAndView listaUsuarios() {
 		ModelAndView mv = new ModelAndView("/acesso/listaUsuarios");
