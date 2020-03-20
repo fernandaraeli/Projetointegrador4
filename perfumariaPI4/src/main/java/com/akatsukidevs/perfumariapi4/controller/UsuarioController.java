@@ -31,7 +31,7 @@ public class UsuarioController {
 		//}
 		ur.save(usuario);
 		//attribute.addFlashAttribute("mensagem: ", "Salvo com sucesso");
-		return("redirect:/cadastrarUsuario");
+		return ("redirect:/cadastrarUsuario");
 	}
 
 	@RequestMapping("/usuarios")
