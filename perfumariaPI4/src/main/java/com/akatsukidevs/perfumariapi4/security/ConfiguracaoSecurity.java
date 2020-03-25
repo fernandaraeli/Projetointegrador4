@@ -36,7 +36,7 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 
-	// autencação em memória
+	// autenticação com base em senha codificada
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
@@ -44,11 +44,10 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 		
 	}
 
-	// para não bloaquear paginas estaticas, passa as pastas para o spring security
-	// ignorar
+	// para não bloaquear paginas estaticas, passa as pastas para o spring security ignorar
 	@Override
 	public void configure(WebSecurity WEB) throws Exception {
-		WEB.ignoring().antMatchers("/materialize**", "/style/**");
+		WEB.ignoring().antMatchers("/css/**", "/image/**","/imgCarousel/**");
 	}
 
 }

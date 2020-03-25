@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+				xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<title>Loja Virtual</title>
+<title>Perfumaria</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
@@ -123,6 +123,9 @@
 							<th>E-mail</th>
 							<th>Senha</th>
 							<th>Tipo de Usuário</th>
+							<th>Editar</th>
+							<th><br></th>
+							<th>Excluir</th>
 						</tr>
 
 						<tr th:each="usuario: ${usuarios}">
@@ -131,12 +134,12 @@
 							<td><span th:text="${usuario.senha}"></span></td>
 							<td><span th:text="${usuario.tipo}"></span></td>
 
-							<td colspan="2"><a class="btn btn-info btn-sm" href="/funcionarios/editar/1" role="button"> <span
-									class="oi oi-brush" title="Editar" aria-hidden="true"></span></a>
-								<button id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm" 
+							<td colspan="2"><a class="btn btn-info btn-sm" role="button"> <span
+									class="oi oi-brush" title="Editar" aria-hidden="true"></span></a></td>
+							<td><a id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm" 
 										data-toggle="modal" data-target="#myModal">
 									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
-								</button>
+								</a>
 							</td>
 						</tr>
 
