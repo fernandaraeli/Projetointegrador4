@@ -32,14 +32,14 @@ public class ProdutosControle {
 	
 	@GetMapping("cadastrarProdutos")
 	public ModelAndView cadastrar(Produtos produtos) {
-		ModelAndView mv =  new ModelAndView("/admin/produtos/cadastro");
+		ModelAndView mv =  new ModelAndView("/admin/produtos/cadastroProdutos");
 		mv.addObject("produtos", produtos);
 		return mv;
 	}
 	
 	@GetMapping("/listarProdutos")
 	public ModelAndView listar() {
-		ModelAndView mv = new ModelAndView("/admin/produtos/lista");
+		ModelAndView mv = new ModelAndView("/admin/produtos/listaProdutos");
 		List<Produtos> produtos = produtoRepositorios.findAll();
 		mv.addObject("produtos", produtos);
 		return mv;

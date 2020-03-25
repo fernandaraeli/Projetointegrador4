@@ -11,21 +11,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name="produtos")
 public class Produtos implements Serializable {
-
-	public Produtos() {
-		super();
-	}
-	
-	
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
 	private Long id;
 	private String nome_produto;
 	private String desc_produto;
 	private double preco;
-
+	
+	
+	
+	public Produtos() {
+		super();
+	}
+	
 	public Long getId() {
 		return id;
 	}

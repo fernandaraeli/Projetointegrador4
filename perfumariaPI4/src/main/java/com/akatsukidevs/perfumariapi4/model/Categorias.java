@@ -11,21 +11,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "categorias")
 public class Categorias implements Serializable {
-	
+	private static final long serialVersionUID = 1L;
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String nome_categoria;
+	
 	public Categorias() {
 		super();
 	}
 	
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-
-	
-
-	private Long id;
-	private String nome_categoria;
-
 	public Long getId() {
 		return id;
 	}

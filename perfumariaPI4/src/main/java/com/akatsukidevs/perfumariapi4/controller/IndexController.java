@@ -18,5 +18,7 @@ public class IndexController {
 	public String admin() {
 		return ("admin/home");
 	}
+	
+	
 
 }

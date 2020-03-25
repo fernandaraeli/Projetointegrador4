@@ -20,7 +20,7 @@ public class UsuarioController {
 		
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.GET)
 	public String salvar() {
-		return("acesso/cadastraUsuario");
+		return("/admin/usuarios/cadastroUsuarios");
 	}
 	
 	//para cadastro do usuario solicitando o post
@@ -36,7 +36,7 @@ public class UsuarioController {
 
 	@RequestMapping("/usuarios")
 	public ModelAndView listaUsuarios() {
-		ModelAndView mv = new ModelAndView("/acesso/listaUsuarios");
+		ModelAndView mv = new ModelAndView("/admin/usuarios/listaUsuarios");
 		Iterable<Usuario> usuarios = ur.findAll();
 		//for (Usuario u : usuarios) {
 			//if(u.isStatus()!=false) {

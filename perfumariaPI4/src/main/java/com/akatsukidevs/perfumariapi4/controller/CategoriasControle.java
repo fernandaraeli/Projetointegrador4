@@ -26,14 +26,14 @@ public class CategoriasControle {
 	
 	@GetMapping("/cadastrarCategorias")
 	public ModelAndView cadastrar(Categorias categorias) {
-		ModelAndView mv = new ModelAndView("admin/categorias/cadastro");
+		ModelAndView mv = new ModelAndView("admin/categorias/cadastroCategorias");
 		mv.addObject("Categorias", categorias);	
 		return mv;
 	}	
 	
 	@GetMapping("/listarCategorias")
 	public ModelAndView listar() {
-		ModelAndView mv = new ModelAndView("admin/categorias/lista");
+		ModelAndView mv = new ModelAndView("admin/categorias/listaCategorias");
 		mv.addObject("listaCategorias",categoriaRepositorio.findAll());		
 		return mv;
 	}

@@ -8,12 +8,12 @@ public class MarcasControle {
 	
 	@GetMapping("/cadastrarMarcas")
 	public String cadastrar() {
-		return ("admin/marcas/cadastro");
+		return ("admin/marcas/cadastroMarcas");
 	}
 	
 	@GetMapping("/listarMarcas")
 	public String listar() {
-		return ("admin/marcas/lista");
+		return ("admin/marcas/listaMarcas");
 	}
 
 }
