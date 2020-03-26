@@ -28,6 +28,7 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST, "/admin").hasRole("admin")
 				.antMatchers(HttpMethod.GET, "/cadatrarUsuario").hasAnyRole("admin")
 				.antMatchers(HttpMethod.POST, "/cadatrarUsuario").hasAnyRole("admin")
+				.antMatchers(HttpMethod.POST, "/editarUsuario/**").hasAnyRole("admin")
 				.antMatchers(HttpMethod.GET, "/cadastrarProduto").hasAnyRole("admin")
 				.antMatchers(HttpMethod.POST, "/cadastrarProduto").hasAnyRole("admin")
 				// autenticação de telas por pessas
