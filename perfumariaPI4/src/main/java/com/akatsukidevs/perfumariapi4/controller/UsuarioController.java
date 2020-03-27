@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -49,11 +50,12 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value="/editarUsuarios/{id_usuario}", method=RequestMethod.GET)
-	public ModelAndView editarUsuario(@PathVariable ("id_usuario") Long id_usuario ) {
+	public ModelAndView editarUsuario(@PathVariable ("id_usuario") Long id_usuario, RedirectAttributes attribute ) {
 		ModelAndView mv = new ModelAndView("/admin/usuarios/editarUsuario");
 		Optional<Usuario> u = ur.findById(id_usuario);
 		Usuario usu = u.get();
 		mv.addObject("usuario", usu);
+		attribute.addFlashAttribute("mensagem: ", "Editado com sucesso");
 		return mv;
 		
 	}
@@ -74,5 +76,13 @@ public class UsuarioController {
 		return ("redirect:/usuarios");
 		
 	}
+	
+	
+	//@PostMapping("**/pesquisaUsuario")
+	/*public ModelAndView pesquisar(@RequestParam ("pesquisaemail") String pesquisaemail) {
+		ModelAndView mv = new ModelAndView("/admin/usuarios/listaUsuarios");
+		mv.addObject("usuario", ur.findByEmail(pesquisaemail));
+		return mv;
+	}*/
 	
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
-				   mlns:th="http://www.thymeleaf.org"
-				   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	mlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title>Perfumaria</title>
 <meta charset="UTF-8" />
@@ -29,8 +29,16 @@
 					<button type="button" class="btn btn-dark navbar-toggle pull-left">
 						<i class="oi oi-menu"></i>
 					</button>
-					<a class="navbar-brand navbar-toggle pull-left" href="#">Painel de Controle</a>
+					<a class="navbar-brand navbar-toggle pull-left" href="/admin/">Painel
+						de Controle</a>
 				</div>
+				<ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item dropdown">
+                    	
+                        <a class="btn btn-outline-light" href="/logout" >Sair</a>
+                        
+                    </li>
+                </ul>
 			</div>
 		</nav>
 	</header>
@@ -52,14 +60,15 @@
 			</div>
 
 			<div class="container" id="cadastro">
-				
+
 				<form method="POST" th:object="${usuario}">
 					<div class="form-row">
 
 						<div class="form-group col-md-6">
 							<label for="nome">Id</label> <input type="text"
 								class="form-control" id="id_usuario" placeholder="Id Usuário"
-								utofocus="autofocus" name="id_usuario" value="" th:field="*{id_usuario}" readonly="readonly"/>
+								utofocus="autofocus" name="id_usuario" value=""
+								th:field="*{id_usuario}" readonly="readonly" />
 							<div class="invalid-feedback"></div>
 
 							<label for="nome">Email</label> <input type="text"
@@ -69,29 +78,31 @@
 
 							<label for="nome">Senha</label> <input type="text"
 								class="form-control" id="senha" placeholder="Senha"
-								utofocus="autofocus" name="senha" size="20" value="" th:field="*{senha}" />
+								utofocus="autofocus" name="senha" size="20" value=""
+								th:field="*{senha}" />
 							<div class="invalid-feedback"></div>
 
 
-							<label for="nome">Tipo de Usuário</label> 
-							<select class="form-control" id="tipo" name="tipo" th:field="*{tipo}">
+							<label for="nome">Tipo de Usuário</label> <select
+								class="form-control" id="tipo" name="tipo" th:field="*{tipo}">
 								<option value="teste"></option>
-								<option value="admin" >Admin</option>
+								<option value="admin">Admin</option>
 								<option value="estoque">Estoque</option>
 								<option value="comprador">Comprador</option>
 							</select><br> <br>
-
+								
+																
 							<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 							<a href="/usuarios" class="btn btn-primary btn-sm">Voltar</a>
 						</div>
 
 					</div>
-			
 
 
-			</form>
-	</div>
-	</section>
+
+				</form>
+			</div>
+		</section>
 
 	</div>
 

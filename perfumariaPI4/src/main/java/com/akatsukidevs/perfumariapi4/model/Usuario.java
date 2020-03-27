@@ -21,6 +21,7 @@ public class Usuario implements UserDetails, Serializable, GrantedAuthority{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_usuario;
+	
 	@NotEmpty
 	private String email;
 	@NotEmpty

@@ -25,6 +25,7 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 				// As restantes com hasRole eu identifico quem usar
 				.antMatchers(HttpMethod.GET, "/").permitAll()
 				.antMatchers(HttpMethod.GET, "/admin").hasAnyRole("admin", "estoque")
+				.antMatchers(HttpMethod.GET, "/admin").hasRole("estoque")
 				.antMatchers(HttpMethod.POST, "/admin").hasRole("admin")
 				.antMatchers(HttpMethod.GET, "/cadatrarUsuario").hasAnyRole("admin")
 				.antMatchers(HttpMethod.POST, "/cadatrarUsuario").hasAnyRole("admin")
@@ -32,9 +33,11 @@ public class ConfiguracaoSecurity extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/cadastrarProduto").hasAnyRole("admin")
 				.antMatchers(HttpMethod.POST, "/cadastrarProduto").hasAnyRole("admin")
 				// autenticação de telas por pessas
-				.anyRequest().authenticated().and().formLogin()./*loginPage("/login").*/permitAll()
+				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll()
 				// se a pessoa quer sair só apertar "/logout"
-				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login?logout").permitAll();
+       
 	}
 
 	// autenticação com base em senha codificada

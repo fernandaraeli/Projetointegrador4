@@ -25,8 +25,15 @@
 					<button type="button" class="btn btn-dark navbar-toggle pull-left">
 						<i class="oi oi-menu"></i>
 					</button>
-					<a class="navbar-brand navbar-toggle pull-left" href="#">Painel de Controle</a>
+					<a class="navbar-brand navbar-toggle pull-left" href="/admin/">Painel de Controle</a>
 				</div>
+				<ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item dropdown">
+                    	
+                        <a class="btn btn-outline-light" href="/logout" >Sair</a>
+                        
+                    </li>
+                </ul>
 			</div>
 		</nav>
 	</header>
@@ -54,62 +61,18 @@
 	
 	        <div class="container">
 	
-	            <p>
-	                <i class="oi oi-magnifying-glass"></i><span></span>
-	                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseNome"
-	                        aria-controls="collapseNome">Nome
-	                </button>
-	              
-	            </p>
-	            <div class="row">
-	                <div class="col">
-	                    <div class="collapse" id="collapseNome">
-	
-	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/funcionarios/buscar/nome">
-	                                <input class="form-control mr-sm-2" type="search" placeholder="nome" aria-label="Search"
-	                                       name="nome" />
-	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-	                            </form>
-	                        </nav>
-	
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col">
-	                    <div class="collapse" id="collapseCargo">
-	
-	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/funcionarios/buscar/cargo">
-	                                <select class="form-control mr-sm-2" name="cargo" aria-label="Search">
-	                           
+	           <form class="form-inline" method="POST" action="pesquisaMarca">
+					<input class="form-control mr-sm-2" type="" aria-label="Search"
+						name="pesquisanome" placeholder="Pesquisa por nome"> <span></span>
+					</input>
 
-	                                </select>
-	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-	                            </form>
-	                        </nav>
-	
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col">
-	                    <div class="collapse" id="collapseData">
-	
-	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/funcionarios/buscar/data">
-	                                <input class="form-control mr-sm-2" type="date" aria-label="Search"
-	                                       name="entrada" />
-	                                <input class="form-control mr-sm-2" type="date" aria-label="Search"
-	                                       name="saida" />
-	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-	                            </form>
-	                        </nav>
-	
-	                    </div>
-	                </div>
-	            </div>
+
+					<button class="btn btn-primary" type="submit"
+						data-target="#collapseNome" aria-controls="collapseNome">
+						<i class="oi oi-magnifying-glass"></i>Pesquisar
+					</button>
+				</form>
+				<br>
 	
 	
 	            <div class="table-responsive">
